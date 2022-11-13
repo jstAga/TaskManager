@@ -1,0 +1,43 @@
+package com.geektech.taskmanager.ui.home
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.geektech.taskmanager.R
+import com.geektech.taskmanager.databinding.FragmentHomeBinding
+import com.geektech.taskmanager.model.Task
+import com.geektech.taskmanager.ui.home.adapter.TaskAdapter
+
+class HomeFragment : Fragment() {
+
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var taskAdapter: TaskAdapter
+    private var taskList = arrayListOf<Task>()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        taskAdapter = TaskAdapter()
+        binding.rvTask.adapter = taskAdapter
+        binding.btnFab.setOnClickListener{
+            findNavController().navigate(R.id.taskFragment)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
