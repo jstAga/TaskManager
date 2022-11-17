@@ -10,4 +10,6 @@
     <string name="save">Save</string>
     <string name="todo">TODO</string>
     <string name="profile">Profile</string>
+    <string name="skip">Skip</string>
+    <string name="get_started">GET STARTED</string>
 </resources>
