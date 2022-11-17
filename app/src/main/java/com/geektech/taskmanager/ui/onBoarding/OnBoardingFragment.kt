@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.geektech.taskmanager.R
 import com.geektech.taskmanager.databinding.FragmentOnBoardingBinding
 import com.geektech.taskmanager.databinding.ItemViewPagerBinding
 import com.geektech.taskmanager.ui.onBoarding.adapter.OnBoardingAdapter
@@ -28,9 +31,15 @@ class OnBoardingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val onBoardAdapter = OnBoardingAdapter()
+
+        val onBoardAdapter = OnBoardingAdapter{
+            findNavController().navigateUp()
+        }
+
         binding.viewPager.adapter = onBoardAdapter
 
         binding.indicator.setViewPager(binding.viewPager)
+
     }
+
 }
