@@ -1,4 +1,4 @@
-package com.geektech.taskmanager.ui.home.adapter
+package com.geektech.taskmanager.ui.task.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -22,10 +22,16 @@ class TaskAdapter(private val taskList: ArrayList<Task> = arrayListOf()) :
     }
 
     override fun getItemCount() = taskList.size
-    inner class TaskViewHolder(binding: ItemTaskBinding) :
+    inner class TaskViewHolder(private val binding: ItemTaskBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(task: Task) {
-
+            binding.tvTitle.text = task.title
+            binding.tvDescription.text = task.description
         }
+    }
+
+    fun addTask(task: Task) {
+        taskList.add(0, task)
+        notifyItemChanged(0)
     }
 }
