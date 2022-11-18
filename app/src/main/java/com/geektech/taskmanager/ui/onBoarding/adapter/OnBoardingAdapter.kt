@@ -6,7 +6,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.geektech.taskmanager.databinding.ItemViewPagerBinding
-import com.geektech.taskmanager.model.OnBoard
+import com.geektech.taskmanager.data.model.OnBoard
 
 class OnBoardingAdapter(val onItemClick:() -> Unit):RecyclerView.Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {
     private var onBoardingList = arrayListOf(

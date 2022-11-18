@@ -1,24 +1,19 @@
 package com.geektech.taskmanager.ui.onBoarding
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import androidx.viewpager2.widget.ViewPager2
-import com.geektech.taskmanager.R
+import com.geektech.taskmanager.data.local.Pref
 import com.geektech.taskmanager.databinding.FragmentOnBoardingBinding
-import com.geektech.taskmanager.databinding.ItemViewPagerBinding
 import com.geektech.taskmanager.ui.onBoarding.adapter.OnBoardingAdapter
-import me.relex.circleindicator.CircleIndicator3
 
 
 class OnBoardingFragment : Fragment() {
     private lateinit var binding: FragmentOnBoardingBinding
+    private lateinit var pref: Pref
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,9 +25,10 @@ class OnBoardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        pref = Pref(requireContext())
 
         val onBoardAdapter = OnBoardingAdapter{
+            pref.saveShowBoarding(true)
             findNavController().navigateUp()
         }
 

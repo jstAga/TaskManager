@@ -1,4 +1,4 @@
-package com.geektech.taskmanager.model
+package com.geektech.taskmanager.data.model
 
 import java.io.Serializable
 

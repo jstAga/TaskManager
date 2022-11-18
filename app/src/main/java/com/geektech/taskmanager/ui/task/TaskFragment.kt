@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.geektech.taskmanager.R
 import com.geektech.taskmanager.databinding.FragmentTaskBinding
 import com.geektech.taskmanager.key.Key
-import com.geektech.taskmanager.model.Task
+import com.geektech.taskmanager.data.model.Task
 
 class TaskFragment : Fragment() {
     private lateinit var binding: FragmentTaskBinding

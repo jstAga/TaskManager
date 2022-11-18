@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.geektech.taskmanager.databinding.FragmentProfileBinding
-import com.geektech.taskmanager.databinding.FragmentTaskBinding
 
 class ProfileFragment : Fragment() {
 private lateinit var binding: FragmentProfileBinding

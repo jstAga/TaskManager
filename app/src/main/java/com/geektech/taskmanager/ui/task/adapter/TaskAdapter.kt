@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.geektech.taskmanager.databinding.ItemTaskBinding
-import com.geektech.taskmanager.model.Task
+import com.geektech.taskmanager.data.model.Task
 
 class TaskAdapter(private val taskList: ArrayList<Task> = arrayListOf()) :
     RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
