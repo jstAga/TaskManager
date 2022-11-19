@@ -12,5 +12,5 @@
     <string name="profile">Profile</string>
     <string name="skip">Skip</string>
     <string name="get_started">GET STARTED</string>
-    <string name="error_et_t">Заполните обязательное поле</string>
+    <string name="error_et_title">Заполните обязательное поле</string>
 </resources>
