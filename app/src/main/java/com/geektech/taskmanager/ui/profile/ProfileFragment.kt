@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.addTextChangedListener
+import com.bumptech.glide.Glide
 import com.geektech.taskmanager.data.local.Pref
 import com.geektech.taskmanager.databinding.FragmentProfileBinding
 
@@ -18,7 +19,10 @@ private lateinit var pref: Pref
 
     private val getContent: ActivityResultLauncher<String> =
         registerForActivityResult(ActivityResultContracts.GetContent()) { imageUri: Uri? ->
-            binding.ivPicture.setImageURI(imageUri)
+//            binding.ivPicture.setImageURI(imageUri)
+
+            Glide.with(this).load(imageUri.toString()).into(binding.ivPicture)
+            pref.saveImage(imageUri.toString())
         }
 
     companion object {
@@ -38,6 +42,15 @@ private lateinit var pref: Pref
 
         pref = Pref(requireContext())
 
+        checkChanges()
+        saveChanges()
+
+        binding.ivPicture.setOnClickListener {
+            getContent.launch(CONTENT_TYPE)
+        }
+    }
+
+    private fun checkChanges() {
         if (pref.getTitle() != ""){
             binding.etTitleHint.hint = pref.getTitle()
         }
@@ -46,6 +59,16 @@ private lateinit var pref: Pref
             binding.etDescriptionHint.hint = pref.getDescription()
         }
 
+        if (pref.getAge() != ""){
+            binding.etAgeHint.hint = pref.getAge()
+        }
+
+        if (pref.getImage() != ""){
+            Glide.with(this).load(pref.getImage()).into(binding.ivPicture)
+        }
+    }
+
+    private fun saveChanges() {
         binding.etTitle.addTextChangedListener{
             pref.saveTitle(binding.etTitle.text.toString())
         }
@@ -54,11 +77,8 @@ private lateinit var pref: Pref
             pref.saveDescription(binding.etDescription.text.toString())
         }
 
-
-
-
-        binding.ivPicture.setOnClickListener {
-            getContent.launch(CONTENT_TYPE)
+        binding.etAge.addTextChangedListener{
+            pref.saveAge(binding.etAge.text.toString())
         }
     }
 }
