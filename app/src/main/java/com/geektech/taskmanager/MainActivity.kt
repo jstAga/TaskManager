@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         // if user had seen -> homeFragment
         // else navigate to onBoarding
-
+        //15 min
         if (!pref.isOnBoardingShow()){
             navController.navigate(R.id.onBoardingFragment)
         }
