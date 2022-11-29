@@ -80,7 +80,10 @@ class TaskAdapter(
 
     private fun changeColor(position:Int, binding: ItemTaskBinding){
         if (position % 2 != 0){
-            binding.itemContainer.setBackgroundColor(Color.GRAY)
+            binding.itemContainer.setBackgroundColor(Color.BLACK)
+            binding.tvTitle.setTextColor(Color.WHITE)
+            binding.tvDescription.setTextColor(Color.WHITE)
+
         }
     }
 }
