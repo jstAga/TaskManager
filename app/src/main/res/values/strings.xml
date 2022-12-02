@@ -14,4 +14,8 @@
     <string name="get_started">GET STARTED</string>
     <string name="error_et_title">Заполните обязательное поле</string>
     <string name="age">Age</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="coder">Enter code</string>
+    <string name="send_code">Send code</string>
+    <string name="continue_">Continue</string>
 </resources>

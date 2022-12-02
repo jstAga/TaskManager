@@ -10,9 +10,9 @@ import com.geektech.taskmanager.data.model.OnBoard
 
 class OnBoardingAdapter(val onItemClick:() -> Unit):RecyclerView.Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {
     private var onBoardingList = arrayListOf(
-        OnBoard(R.raw.looti1, "Work on time", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-        OnBoard(R.raw.lotii2, "Track progress", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra suspendisse potenti nullam ac tortor. "),
-        OnBoard(R.raw.lotti3, "Remember daily task", "Tortor aliquam nulla facilisi cras fermentum odio eu. Risus in hendrerit gravida rutrum quisque non tellus.")
+        OnBoard(R.raw.lotie1, "Work on time", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+        OnBoard(R.raw.lottie2, "Track progress", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra suspendisse potenti nullam ac tortor. "),
+        OnBoard(R.raw.lottie3, "Remember daily task", "Tortor aliquam nulla facilisi cras fermentum odio eu. Risus in hendrerit gravida rutrum quisque non tellus.")
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnBoardingViewHolder {

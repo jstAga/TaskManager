@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/bg_circle_indicator.xml" value="0.123" />
         <entry key="app/src/main/res/drawable/bg_et.xml" value="0.123" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/fragment_auth.xml" value="0.25555555555555554" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2937118530273437" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2947916666666667" />
